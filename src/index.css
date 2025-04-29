@@ -66,4 +66,12 @@
   .animate-on-scroll.visible {
     @apply opacity-100 animate-fade-in;
   }
+
+  .animate-on-scroll[data-delay] {
+    transition-delay: var(--delay, 0ms);
+  }
+  
+  .animate-on-scroll.delay-applied {
+    --delay: attr(data-delay ms);
+  }
 }

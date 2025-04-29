@@ -19,6 +19,11 @@ const Header = () => {
     };
   }, [scrolled]);
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <header
       className={cn(
@@ -31,12 +36,13 @@ const Header = () => {
           <img 
             src="/lovable-uploads/e2caf99c-2624-4ab4-ab26-e066384c08bc.png" 
             alt="Companio Logo" 
-            className="h-8 md:h-10 mr-3" 
+            className="h-10 md:h-12 mr-3" 
           />
           <a 
             href="#" 
+            onClick={scrollToTop}
             className={cn(
-              'text-xl md:text-2xl font-semibold transition-colors duration-300',
+              'text-xl md:text-2xl lg:text-3xl font-semibold transition-colors duration-300',
               scrolled ? 'text-white' : 'text-companio-charcoal'
             )}
           >

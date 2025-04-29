@@ -17,7 +17,11 @@ const SolutionStep = ({ number, title, description, delay = 0 }: SolutionStepPro
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            entry.target.style.animationDelay = `${delay}ms`;
+            setTimeout(() => {
+              if (stepRef.current) {
+                stepRef.current.classList.add('delay-applied');
+              }
+            }, delay);
           }
         });
       },
@@ -35,6 +39,7 @@ const SolutionStep = ({ number, title, description, delay = 0 }: SolutionStepPro
     <div 
       ref={stepRef}
       className="animate-on-scroll flex flex-col items-center"
+      data-delay={delay}
     >
       <div className="w-12 h-12 rounded-full bg-companio-accent flex items-center justify-center text-white text-xl font-bold mb-4">
         {number}
@@ -111,25 +116,25 @@ const Solution = () => {
             <SolutionStep 
               number="1"
               title="Diagnostics"
-              description="Multi-omic data collection and analysis to understand your dog's unique biology."
+              description="Multi-omic data capture—DNA, blood, microbiome & more—to map every dog's unique baseline biology."
               delay={0}
             />
             <SolutionStep 
               number="2"
               title="Digital Twin"
-              description="AI-powered model of your dog's health profile, constantly updated with new data."
+              description="Real-time AI model that evolves with each new data-point, forecasting risks before they surface."
               delay={200}
             />
             <SolutionStep 
               number="3"
               title="Precision Plan"
-              description="Personalized recommendations for nutrition, exercise, and therapeutic interventions."
+              description="Personalised nutrition, exercise & supplement protocols, continuously refined by the twin's insights."
               delay={400}
             />
             <SolutionStep 
               number="4"
-              title="Longer Healthspan"
-              description="Enhanced quality of life and extended healthy years for your canine companion."
+              title="Targeted Interventions"
+              description="Clinically-validated therapeutics and longevity treatments deployed at the perfect moment to extend healthy years."
               delay={600}
             />
           </div>

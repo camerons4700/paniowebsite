@@ -4,11 +4,12 @@ import { useEffect, useRef } from 'react';
 interface TeamMemberProps {
   name: string;
   role: string;
-  achievement: string;
+  bio: string;
+  imageSrc: string;
   delay?: number;
 }
 
-const TeamMember = ({ name, role, achievement, delay = 0 }: TeamMemberProps) => {
+const TeamMember = ({ name, role, bio, imageSrc, delay = 0 }: TeamMemberProps) => {
   const memberRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -17,7 +18,11 @@ const TeamMember = ({ name, role, achievement, delay = 0 }: TeamMemberProps) => 
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            entry.target.style.animationDelay = `${delay}ms`;
+            setTimeout(() => {
+              if (memberRef.current) {
+                memberRef.current.classList.add('delay-applied');
+              }
+            }, delay);
           }
         });
       },
@@ -35,22 +40,21 @@ const TeamMember = ({ name, role, achievement, delay = 0 }: TeamMemberProps) => 
     <div 
       ref={memberRef}
       className="animate-on-scroll flex flex-col items-center"
+      data-delay={delay}
     >
-      <div className="w-40 h-40 bg-companio-charcoal/20 rounded-full overflow-hidden mb-4 flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-companio-charcoal/40">
-          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
+      <div className="w-40 h-40 bg-companio-charcoal/10 rounded-full overflow-hidden mb-4 flex items-center justify-center">
+        <img src={imageSrc} alt={name} className="w-full h-full object-cover" />
       </div>
       <h3 className="text-xl font-semibold">{name}</h3>
-      <p className="text-companio-gray text-sm mb-1">{role}</p>
-      <p className="text-companio-accent text-sm text-center max-w-[200px]">{achievement}</p>
+      <p className="text-companio-accent text-sm mb-2">{role}</p>
+      <p className="text-companio-gray text-sm text-center max-w-[200px]">{bio}</p>
     </div>
   );
 };
 
 const Team = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const advisoryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,11 +69,46 @@ const Team = () => {
     );
 
     if (titleRef.current) observer.observe(titleRef.current);
+    if (advisoryRef.current) observer.observe(advisoryRef.current);
 
     return () => {
       if (titleRef.current) observer.unobserve(titleRef.current);
+      if (advisoryRef.current) observer.unobserve(advisoryRef.current);
     };
   }, []);
+
+  const teamMembers = [
+    {
+      name: "Cameron Shaw",
+      role: "CEO",
+      bio: "Multi-exit biotech founder; steered a NASDAQ IPO and 17 award-winning ventures across diagnostics, consumer health & pet tech.",
+      imageSrc: "/lovable-uploads/ad150a7b-3fa9-49cb-909b-b37227863539.png"
+    },
+    {
+      name: "Joshua Uwaifo",
+      role: "CTO",
+      bio: "AI architect behind the Oxford-Cambridge Joint AI Programme; led 100+ product launches for AstraZeneca, FIFA & PwC.",
+      imageSrc: "/lovable-uploads/84985e0c-a5f6-4092-85f9-60bc8e98f585.png"
+    },
+    {
+      name: "Moe Uwaifo",
+      role: "Chief AI Officer",
+      bio: "Serial founder (B2B, B2C, D2C) whose platforms reach millions of users and drive $-scale revenues across three continents.",
+      imageSrc: "/lovable-uploads/c4ce8432-00ee-4e1a-b526-9ed01051f32e.png"
+    },
+    {
+      name: "Dr Tomasz George",
+      role: "CSO",
+      bio: "PhD Longevity scientist; ex-CSO of a NASDAQ biotech; designed global longevity-clinic protocols and wellness algorithms.",
+      imageSrc: "/lovable-uploads/95ad470d-2233-4fc9-9fed-cc2c40bd1bd5.png"
+    },
+    {
+      name: "Ray Rafik",
+      role: "CCO",
+      bio: "Five-time founder; secured a £500m Allianz partnership at Unmortgage; growth strategist obsessed with canine wellbeing.",
+      imageSrc: "/lovable-uploads/34050ac5-2bbc-4e3e-9e6e-b2fc17cb23c4.png"
+    }
+  ];
 
   return (
     <section id="team" className="py-20 px-6 md:px-10">
@@ -81,31 +120,27 @@ const Team = () => {
           Founding Team
         </h2>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          <TeamMember 
-            name="Dr. Jane Smith"
-            role="CEO & Co-Founder"
-            achievement="Former NASDAQ IPO lead, Geneticist"
-            delay={0}
-          />
-          <TeamMember 
-            name="Dr. Michael Chen"
-            role="CSO & Co-Founder"
-            achievement="Veterinary Medicine Expert, 15+ Years Research"
-            delay={100}
-          />
-          <TeamMember 
-            name="Sarah Patel"
-            role="CTO"
-            achievement="AI Pioneer, Former Tech Executive"
-            delay={200}
-          />
-          <TeamMember 
-            name="Dr. Robert Johnson"
-            role="VP of R&D"
-            achievement="Biotech Veteran, Multiple Patents"
-            delay={300}
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 mb-16">
+          {teamMembers.map((member, index) => (
+            <TeamMember 
+              key={member.name}
+              name={member.name}
+              role={member.role}
+              bio={member.bio}
+              imageSrc={member.imageSrc}
+              delay={index * 100}
+            />
+          ))}
+        </div>
+
+        <div 
+          ref={advisoryRef}
+          className="animate-on-scroll text-center mt-12 max-w-3xl mx-auto"
+        >
+          <h3 className="text-2xl font-semibold mb-4">World-Class Board & Brand Ambassadors</h3>
+          <p className="text-companio-gray">
+            We're finalising a council of leading veterinarians, geneticists, athletes and canine influencers—full roster coming soon.
+          </p>
         </div>
       </div>
     </section>
