@@ -9,6 +9,7 @@ import Team from "@/components/Team";
 import Solution from "@/components/Solution";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import FuturePetHealth from "@/components/FuturePetHealth";
 
 const Index = () => {
   useEffect(() => {
@@ -51,6 +52,7 @@ const Index = () => {
       <Science />
       <AIInsights />
       <Solution />
+      <FuturePetHealth />
       <Team />
       <CTA />
       <Footer />
