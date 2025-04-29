@@ -85,7 +85,7 @@ const Team = () => {
       name: "Moe Hanafy",
       role: "Chief Operating Officer",
       bio: "Serial entrepreneur who has launched 100+ B2B/B2C products across three continents, generating multimillion-dollar revenue and operational scale.",
-      imageSrc: "/lovable-uploads/304cae6b-58e6-4578-b568-4a36dd464683.png"
+      imageSrc: "/lovable-uploads/e6533ee6-f962-47d6-a468-9414b18ef1c5.png"
     },
     {
       name: "Joshua Uwaifo",
