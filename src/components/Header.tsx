@@ -68,20 +68,20 @@ const Header = () => {
           <a 
             href="#home" 
             onClick={(e) => scrollToSection(e, 'home')}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider uppercase font-montserrat transition-colors duration-300 text-white"
+            className="text-2xl md:text-3xl lg:text-[2.8rem] font-bold tracking-wider uppercase font-montserrat transition-colors duration-300 text-white"
           >
             Companio
           </a>
         </div>
         <nav>
-          <ul className="flex space-x-6 md:space-x-10">
+          <ul className="flex space-x-6 md:space-x-10 items-center">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
                   onClick={(e) => scrollToSection(e, item.id)}
                   className={cn(
-                    'text-sm md:text-base font-medium transition-colors duration-200',
+                    'text-sm md:text-lg font-medium transition-colors duration-200',
                     scrolled ? 'text-white' : 'text-companio-charcoal',
                     activeSection === item.id 
                       ? 'text-companio-accent' 
