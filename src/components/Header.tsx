@@ -1,10 +1,20 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Menu, X } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+  DrawerClose
+} from '@/components/ui/drawer';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +55,9 @@ const Header = () => {
         top: offsetTop,
         behavior: 'smooth'
       });
+      
+      // Close mobile menu after clicking a link
+      setIsMenuOpen(false);
     }
   };
 
@@ -73,27 +86,76 @@ const Header = () => {
             Companio
           </a>
         </div>
-        <nav>
-          <ul className="flex space-x-6 md:space-x-10 items-center">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  onClick={(e) => scrollToSection(e, item.id)}
-                  className={cn(
-                    'text-sm md:text-lg font-medium transition-colors duration-200',
-                    scrolled ? 'text-white' : 'text-companio-charcoal',
-                    activeSection === item.id 
-                      ? 'text-companio-accent' 
-                      : (scrolled ? 'hover:text-companio-accent' : 'hover:text-companio-accent')
-                  )}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+
+        {/* Desktop Navigation */}
+        {!isMobile && (
+          <nav>
+            <ul className="flex space-x-6 md:space-x-10 items-center">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    onClick={(e) => scrollToSection(e, item.id)}
+                    className={cn(
+                      'text-sm md:text-lg font-medium transition-colors duration-200',
+                      scrolled ? 'text-white' : 'text-companio-charcoal',
+                      activeSection === item.id 
+                        ? 'text-companio-accent' 
+                        : (scrolled ? 'hover:text-companio-accent' : 'hover:text-companio-accent')
+                    )}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
+        {/* Mobile Navigation */}
+        {isMobile && (
+          <Drawer open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <DrawerTrigger asChild>
+              <button 
+                className="text-white p-2 focus:outline-none"
+                aria-label="Menu"
+              >
+                <Menu size={28} />
+              </button>
+            </DrawerTrigger>
+            <DrawerContent className="h-[70vh] bg-companio-charcoal/95 backdrop-blur-sm">
+              <div className="flex justify-end p-4">
+                <DrawerClose asChild>
+                  <button 
+                    className="text-white p-2 focus:outline-none" 
+                    aria-label="Close menu"
+                  >
+                    <X size={28} />
+                  </button>
+                </DrawerClose>
+              </div>
+              <nav className="px-6 pb-10">
+                <ul className="flex flex-col space-y-6">
+                  {navItems.map((item) => (
+                    <li key={item.id}>
+                      <a
+                        href={`#${item.id}`}
+                        onClick={(e) => scrollToSection(e, item.id)}
+                        className={cn(
+                          'text-xl font-medium transition-colors duration-200 block py-3',
+                          'text-white hover:text-companio-accent',
+                          activeSection === item.id && 'text-companio-accent'
+                        )}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </DrawerContent>
+          </Drawer>
+        )}
       </div>
     </header>
   );
