@@ -30,8 +30,8 @@ const Hero = () => {
     <section className="relative h-screen bg-companio-charcoal overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/lovable-uploads/3afbcdce-7963-4cb6-903b-9f2b576f155d.png"
-          alt="Intelligent dog portrait"
+          src="/lovable-uploads/34050ac5-2bbc-4e3e-9e6e-b2fc17cb23c4.png"
+          alt="Happy golden retriever dog outdoors"
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-companio-charcoal/40 to-companio-charcoal"></div>
