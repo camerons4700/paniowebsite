@@ -76,34 +76,27 @@ const Header = () => {
             Companio
           </a>
         </div>
-        <div className="flex items-center">
-          <nav className="mr-6">
-            <ul className="flex space-x-6 md:space-x-10">
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={(e) => scrollToSection(e, item.id)}
-                    className={cn(
-                      'text-sm md:text-base font-medium transition-colors duration-200',
-                      scrolled ? 'text-white' : 'text-companio-charcoal',
-                      activeSection === item.id 
-                        ? 'text-companio-accent' 
-                        : (scrolled ? 'hover:text-companio-accent' : 'hover:text-companio-accent')
-                    )}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <img 
-            src="/lovable-uploads/dafc7530-7ae8-4bbf-9239-3284328836fe.png" 
-            alt="Companio Logo" 
-            className="h-14 md:h-[4.5rem]" 
-          />
-        </div>
+        <nav>
+          <ul className="flex space-x-6 md:space-x-10">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={(e) => scrollToSection(e, item.id)}
+                  className={cn(
+                    'text-sm md:text-base font-medium transition-colors duration-200',
+                    scrolled ? 'text-white' : 'text-companio-charcoal',
+                    activeSection === item.id 
+                      ? 'text-companio-accent' 
+                      : (scrolled ? 'hover:text-companio-accent' : 'hover:text-companio-accent')
+                  )}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );
