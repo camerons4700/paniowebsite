@@ -91,7 +91,7 @@ const Team = () => {
       name: "Joshua Uwaifo",
       role: "Chief Technology Officer",
       bio: "AI leader for the Oxford-Cambridge Joint AI Programme; decade delivering enterprise AI solutions for AstraZeneca, FIFA, Hawk Gaming and PwC.",
-      imageSrc: "/lovable-uploads/95ad470d-2233-4fc9-9fed-cc2c40bd1bd5.png"
+      imageSrc: "/lovable-uploads/a09c4909-97ed-4329-ab7f-dfa0a34ee176.png"
     },
     {
       name: "Dr Tomasz George",
