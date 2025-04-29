@@ -2,9 +2,9 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import DataModels from "@/components/DataModels";
 import Research from "@/components/Research";
 import Team from "@/components/Team";
-import DataModels from "@/components/DataModels";
 import Solution from "@/components/Solution";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -46,10 +46,10 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <Hero />
-      <Research />
       <DataModels />
-      <Team />
+      <Research />
       <Solution />
+      <Team />
       <CTA />
       <Footer />
     </div>
