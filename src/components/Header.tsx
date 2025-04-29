@@ -1,19 +1,19 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Menu } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerTrigger,
+  DrawerClose
 } from '@/components/ui/drawer';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -55,6 +55,9 @@ const Header = () => {
         top: offsetTop,
         behavior: 'smooth'
       });
+      
+      // Close mobile menu after clicking a link
+      setIsMenuOpen(false);
     }
   };
 
@@ -65,33 +68,6 @@ const Header = () => {
     { id: 'team', label: 'Team' },
     { id: 'contact', label: 'Contact' }
   ];
-
-  const renderNavItems = (onClick?: () => void) => (
-    <>
-      {navItems.map((item) => (
-        <li key={item.id} className={isMobile ? "w-full" : ""}>
-          <a
-            href={`#${item.id}`}
-            onClick={(e) => {
-              scrollToSection(e, item.id);
-              onClick?.();
-            }}
-            className={cn(
-              isMobile 
-                ? 'block w-full py-4 text-center text-xl font-medium border-b border-companio-charcoal/10'
-                : 'text-sm md:text-lg font-medium transition-colors duration-200',
-              scrolled ? 'text-white' : isMobile ? 'text-companio-charcoal' : 'text-companio-charcoal',
-              activeSection === item.id 
-                ? 'text-companio-accent' 
-                : (scrolled ? 'hover:text-companio-accent' : 'hover:text-companio-accent')
-            )}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
-    </>
-  );
 
   return (
     <header
@@ -110,34 +86,75 @@ const Header = () => {
             Companio
           </a>
         </div>
-        
-        {isMobile ? (
-          <Drawer>
+
+        {/* Desktop Navigation */}
+        {!isMobile && (
+          <nav>
+            <ul className="flex space-x-6 md:space-x-10 items-center">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    onClick={(e) => scrollToSection(e, item.id)}
+                    className={cn(
+                      'text-sm md:text-lg font-medium transition-colors duration-200',
+                      scrolled ? 'text-white' : 'text-companio-charcoal',
+                      activeSection === item.id 
+                        ? 'text-companio-accent' 
+                        : (scrolled ? 'hover:text-companio-accent' : 'hover:text-companio-accent')
+                    )}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
+        {/* Mobile Navigation */}
+        {isMobile && (
+          <Drawer open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <DrawerTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white">
+              <button 
+                className="text-white p-2 focus:outline-none"
+                aria-label="Menu"
+              >
                 <Menu size={28} />
-              </Button>
+              </button>
             </DrawerTrigger>
-            <DrawerContent className="bg-white pt-6 pb-10 px-4">
-              <nav className="w-full">
-                <ul className="flex flex-col space-y-2 w-full">
-                  {renderNavItems(() => {
-                    // Find and click the DrawerClose button to close the drawer
-                    const closeButton = document.querySelector('[data-vaul-drawer-close]');
-                    if (closeButton && closeButton instanceof HTMLElement) {
-                      closeButton.click();
-                    }
-                  })}
+            <DrawerContent className="h-[70vh] bg-companio-charcoal/95 backdrop-blur-sm">
+              <div className="flex justify-end p-4">
+                <DrawerClose asChild>
+                  <button 
+                    className="text-white p-2 focus:outline-none" 
+                    aria-label="Close menu"
+                  >
+                    <X size={28} />
+                  </button>
+                </DrawerClose>
+              </div>
+              <nav className="px-6 pb-10">
+                <ul className="flex flex-col space-y-6">
+                  {navItems.map((item) => (
+                    <li key={item.id}>
+                      <a
+                        href={`#${item.id}`}
+                        onClick={(e) => scrollToSection(e, item.id)}
+                        className={cn(
+                          'text-xl font-medium transition-colors duration-200 block py-3',
+                          'text-white hover:text-companio-accent',
+                          activeSection === item.id && 'text-companio-accent'
+                        )}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </nav>
             </DrawerContent>
           </Drawer>
-        ) : (
-          <nav>
-            <ul className="flex space-x-6 md:space-x-10 items-center">
-              {renderNavItems()}
-            </ul>
-          </nav>
         )}
       </div>
     </header>
