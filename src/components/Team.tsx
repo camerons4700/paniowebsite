@@ -103,7 +103,7 @@ const Team = () => {
       name: "Ray Rafik",
       role: "Chief Commercial Officer",
       bio: "Five-time founder and growth strategist; secured a £500 m Allianz partnership at Unmortgage and drives commercial expansion with a passion for pets.",
-      imageSrc: "/lovable-uploads/34050ac5-2bbc-4e3e-9e6e-b2fc17cb23c4.png"
+      imageSrc: "/lovable-uploads/0ad98071-2b58-4a70-8833-946a6e8862f9.png"
     }
   ];
 
