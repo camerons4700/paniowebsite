@@ -79,68 +79,72 @@ const Solution = () => {
   }, []);
 
   return (
-    <section id="solution" className="py-20 px-6 md:px-10 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-10 mb-20">
-          <div className="flex flex-col justify-center">
-            <h2 
-              ref={titleRef}
-              className="animate-on-scroll text-3xl md:text-4xl font-bold mb-6"
-            >
-              Solution Snapshot
-            </h2>
-            <p 
-              ref={textRef}
-              className="animate-on-scroll text-lg leading-relaxed"
-            >
+    <>
+      {/* Solution Snapshot Hero Section */}
+      <section id="solution" className="relative h-screen bg-companio-charcoal overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/lovable-uploads/95ad470d-2233-4fc9-9fed-cc2c40bd1bd5.png" 
+            alt="Dog in natural setting" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 md:px-20">
+          <div 
+            ref={textRef}
+            className="animate-on-scroll max-w-3xl mx-auto text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Solution Snapshot</h2>
+            <p className="text-lg md:text-xl leading-relaxed text-white">
               Our innovative approach creates a personalized health journey for every dog, enhancing quality of life and extending healthspan through data-driven precision interventions.
             </p>
           </div>
-          
-          <div 
-            ref={imageRef}
-            className="animate-on-scroll relative h-[350px] overflow-hidden rounded-xl"
+        </div>
+      </section>
+
+      {/* Our 4-Part Precision Approach Section */}
+      <section className="py-20 px-6 md:px-10 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 
+            ref={titleRef}
+            className="animate-on-scroll text-3xl md:text-4xl font-bold mb-16 text-center"
           >
-            <img 
-              src="/lovable-uploads/95ad470d-2233-4fc9-9fed-cc2c40bd1bd5.png" 
-              alt="Dog in natural setting" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-companio-accent/30 to-transparent"></div>
+            Our 4-Part Precision Approach
+          </h2>
+          
+          <div className="relative">
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-companio-offwhite -translate-y-1/2 z-0 hidden md:block"></div>
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-10">
+              <SolutionStep 
+                number="1"
+                title="Diagnostics"
+                description="Multi-omic data capture—DNA, blood, microbiome & more—to map every dog's unique baseline biology."
+                delay={0}
+              />
+              <SolutionStep 
+                number="2"
+                title="Digital Twin"
+                description="Real-time AI model that evolves with each new data-point, forecasting risks before they surface."
+                delay={200}
+              />
+              <SolutionStep 
+                number="3"
+                title="Precision Plan"
+                description="Personalised nutrition, exercise & supplement protocols, continuously refined by the twin's insights."
+                delay={400}
+              />
+              <SolutionStep 
+                number="4"
+                title="Targeted Interventions"
+                description="Clinically-validated therapeutics and longevity treatments deployed at the perfect moment to extend healthy years."
+                delay={600}
+              />
+            </div>
           </div>
         </div>
-        
-        <div className="relative">
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-companio-offwhite -translate-y-1/2 z-0 hidden md:block"></div>
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-10">
-            <SolutionStep 
-              number="1"
-              title="Diagnostics"
-              description="Multi-omic data capture—DNA, blood, microbiome & more—to map every dog's unique baseline biology."
-              delay={0}
-            />
-            <SolutionStep 
-              number="2"
-              title="Digital Twin"
-              description="Real-time AI model that evolves with each new data-point, forecasting risks before they surface."
-              delay={200}
-            />
-            <SolutionStep 
-              number="3"
-              title="Precision Plan"
-              description="Personalised nutrition, exercise & supplement protocols, continuously refined by the twin's insights."
-              delay={400}
-            />
-            <SolutionStep 
-              number="4"
-              title="Targeted Interventions"
-              description="Clinically-validated therapeutics and longevity treatments deployed at the perfect moment to extend healthy years."
-              delay={600}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
