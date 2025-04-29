@@ -32,9 +32,9 @@ const Hero = () => {
         <img
           src="/lovable-uploads/34050ac5-2bbc-4e3e-9e6e-b2fc17cb23c4.png"
           alt="Happy golden retriever dog outdoors"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-companio-charcoal/40 to-companio-charcoal"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-companio-charcoal/20 to-companio-charcoal"></div>
       </div>
       
       <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20 max-w-7xl mx-auto">

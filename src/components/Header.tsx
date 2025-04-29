@@ -27,11 +27,16 @@ const Header = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-xl md:text-2xl font-semibold">
+        <div className="flex items-center">
+          <img 
+            src="/lovable-uploads/e2caf99c-2624-4ab4-ab26-e066384c08bc.png" 
+            alt="Companio Logo" 
+            className="h-8 md:h-10 mr-3" 
+          />
           <a 
             href="#" 
             className={cn(
-              'transition-colors duration-300',
+              'text-xl md:text-2xl font-semibold transition-colors duration-300',
               scrolled ? 'text-white' : 'text-companio-charcoal'
             )}
           >
