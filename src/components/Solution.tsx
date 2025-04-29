@@ -90,13 +90,18 @@ const Solution = () => {
           />
         </div>
         
-        <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 md:px-20">
+        <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 md:px-20 max-w-7xl mx-auto text-center">
+          <h1 
+            ref={titleRef}
+            className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight mb-6"
+          >
+            Solution Snapshot
+          </h1>
           <div 
             ref={textRef}
-            className="animate-on-scroll max-w-3xl mx-auto text-center"
+            className="animate-on-scroll max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Solution Snapshot</h2>
-            <p className="text-lg md:text-xl leading-relaxed text-white">
+            <p className="text-lg md:text-xl text-white leading-relaxed">
               Our innovative approach creates a personalized health journey for every dog, enhancing quality of life and extending healthspan through data-driven precision interventions.
             </p>
           </div>

@@ -2,7 +2,8 @@
 import { useEffect, useRef } from 'react';
 
 const Science = () => {
-  const textRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -16,9 +17,11 @@ const Science = () => {
       { threshold: 0.1 }
     );
 
+    if (titleRef.current) observer.observe(titleRef.current);
     if (textRef.current) observer.observe(textRef.current);
 
     return () => {
+      if (titleRef.current) observer.unobserve(titleRef.current);
       if (textRef.current) observer.unobserve(textRef.current);
     };
   }, []);
@@ -33,13 +36,18 @@ const Science = () => {
         />
       </div>
       
-      <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 md:px-20">
+      <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 md:px-20 max-w-7xl mx-auto text-center">
+        <h1 
+          ref={titleRef}
+          className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight mb-6"
+        >
+          Science-Led
+        </h1>
         <div 
           ref={textRef}
-          className="animate-on-scroll max-w-3xl mx-auto text-center"
+          className="animate-on-scroll max-w-2xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Science-Led</h2>
-          <p className="text-lg md:text-xl leading-relaxed text-white">
+          <p className="text-lg md:text-xl text-white leading-relaxed">
             Our groundbreaking research combines advanced artificial intelligence with multi-omic data to create comprehensive digital canine twins. This patented technology allows us to monitor, predict, and enhance canine health with unprecedented precision, extending both quality of life and longevity.
           </p>
         </div>
