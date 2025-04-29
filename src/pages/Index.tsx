@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import DataModels from "@/components/DataModels";
-import Research from "@/components/Research";
+import Science from "@/components/Science";
 import Team from "@/components/Team";
 import Solution from "@/components/Solution";
 import CTA from "@/components/CTA";
@@ -47,7 +47,7 @@ const Index = () => {
       <Header />
       <Hero />
       <DataModels />
-      <Research />
+      <Science />
       <Solution />
       <Team />
       <CTA />
