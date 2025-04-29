@@ -37,24 +37,49 @@ const Index = () => {
       observer.observe(el);
     });
 
+    // Add smooth scroll behavior for anchor links
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+        const id = target.getAttribute('href')?.substring(1);
+        const element = document.getElementById(id || '');
+        if (element) {
+          e.preventDefault();
+          window.scrollTo({
+            top: element.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+
     return () => {
       document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.unobserve(el);
       });
+      document.removeEventListener('click', handleAnchorClick);
     };
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <Hero />
-      <DataModels />
+      <div id="home">
+        <Hero />
+        <DataModels />
+      </div>
       <Science />
       <AIInsights />
       <Solution />
       <FuturePetHealth />
-      <Team />
-      <CTA />
+      <div id="team">
+        <Team />
+      </div>
+      <div id="contact">
+        <CTA />
+      </div>
       <Footer />
     </div>
   );

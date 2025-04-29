@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,18 +12,49 @@ const Header = () => {
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
+      
+      // Determine which section is currently in view
+      const sections = ['home', 'science', 'solution', 'team', 'contact'];
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (!element) return false;
+        
+        const rect = element.getBoundingClientRect();
+        // Element is considered in view if its top is near the top of the viewport
+        // Adjusted threshold to improve accuracy
+        return rect.top <= 150 && rect.bottom > 150;
+      });
+      
+      if (currentSection && currentSection !== activeSection) {
+        setActiveSection(currentSection);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrolled]);
+  }, [scrolled, activeSection]);
 
-  const scrollToTop = (e: React.MouseEvent) => {
+  const scrollToSection = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
   };
+
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'science', label: 'Science' },
+    { id: 'solution', label: 'Solution' },
+    { id: 'team', label: 'Team' },
+    { id: 'contact', label: 'Contact' }
+  ];
 
   return (
     <header
@@ -34,8 +66,8 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <a 
-            href="#" 
-            onClick={scrollToTop}
+            href="#home" 
+            onClick={(e) => scrollToSection(e, 'home')}
             className={cn(
               'text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider uppercase font-montserrat transition-colors duration-300',
               scrolled ? 'text-white' : 'text-companio-charcoal'
@@ -47,16 +79,20 @@ const Header = () => {
         <div className="flex items-center">
           <nav className="mr-6">
             <ul className="flex space-x-6 md:space-x-10">
-              {['Research', 'Team', 'Solution', 'Contact'].map((item) => (
-                <li key={item}>
+              {navItems.map((item) => (
+                <li key={item.id}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={`#${item.id}`}
+                    onClick={(e) => scrollToSection(e, item.id)}
                     className={cn(
-                      'text-sm md:text-base font-medium hover:text-companio-accent transition-colors duration-200',
-                      scrolled ? 'text-white' : 'text-companio-charcoal'
+                      'text-sm md:text-base font-medium transition-colors duration-200',
+                      scrolled ? 'text-white' : 'text-companio-charcoal',
+                      activeSection === item.id 
+                        ? 'text-companio-accent' 
+                        : (scrolled ? 'hover:text-companio-accent' : 'hover:text-companio-accent')
                     )}
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
