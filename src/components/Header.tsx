@@ -37,7 +37,7 @@ const Header = () => {
             href="#" 
             onClick={scrollToTop}
             className={cn(
-              'text-xl md:text-2xl lg:text-3xl font-semibold transition-colors duration-300',
+              'text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider uppercase font-montserrat transition-colors duration-300',
               scrolled ? 'text-white' : 'text-companio-charcoal'
             )}
           >
