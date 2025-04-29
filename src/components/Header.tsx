@@ -68,10 +68,7 @@ const Header = () => {
           <a 
             href="#home" 
             onClick={(e) => scrollToSection(e, 'home')}
-            className={cn(
-              'text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider uppercase font-montserrat transition-colors duration-300',
-              scrolled ? 'text-white' : 'text-companio-charcoal'
-            )}
+            className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider uppercase font-montserrat transition-colors duration-300 text-white"
           >
             Companio
           </a>
