@@ -78,7 +78,7 @@ const Science = () => {
           ref={titleRef}
           className="animate-on-scroll text-3xl md:text-4xl font-bold text-center mb-16"
         >
-          Science-Led
+          Science & R&D
         </h2>
         
         <div className="grid md:grid-cols-2 gap-10 mb-20">
@@ -89,7 +89,7 @@ const Science = () => {
             <img 
               src="/lovable-uploads/304cae6b-58e6-4578-b568-4a36dd464683.png" 
               alt="Dog in action" 
-              className="w-full h-full object-cover transition-all duration-700"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-companio-accent/10"></div>
           </div>
@@ -99,7 +99,9 @@ const Science = () => {
               ref={textRef}
               className="animate-on-scroll text-lg leading-relaxed"
             >
-              Our research pairs advanced AI with multi-omic data to build comprehensive digital canine twins, enabling us to monitor, predict and enhance health with unprecedented precision—extending quality of life and longevity.
+              Our groundbreaking research combines advanced artificial intelligence with multi-omic data to create 
+              comprehensive digital canine twins. This patented technology allows us to monitor, predict, and 
+              enhance canine health with unprecedented precision, extending both quality of life and longevity.
             </p>
           </div>
         </div>
