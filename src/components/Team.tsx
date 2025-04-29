@@ -80,33 +80,33 @@ const Team = () => {
   const teamMembers = [
     {
       name: "Cameron Shaw",
-      role: "CEO",
-      bio: "Multi-exit biotech founder; steered a NASDAQ IPO and 17 award-winning ventures across diagnostics, consumer health & pet tech.",
-      imageSrc: "/lovable-uploads/ad150a7b-3fa9-49cb-909b-b37227863539.png"
+      role: "Chief Executive Officer",
+      bio: "Multi-exit biotech founder with a NASDAQ IPO and 17 industry awards; spearheaded breakthrough veterinary diagnostics and consumer health brands.",
+      imageSrc: "/lovable-uploads/fdeeeac9-e54b-48b6-956c-4b6eda999806.png"
+    },
+    {
+      name: "Moe Hanafy",
+      role: "Chief Operating Officer",
+      bio: "Serial entrepreneur who has launched 100+ B2B/B2C products across three continents, generating multimillion-dollar revenue and operational scale.",
+      imageSrc: "/lovable-uploads/fdeeeac9-e54b-48b6-956c-4b6eda999806.png"
     },
     {
       name: "Joshua Uwaifo",
-      role: "CTO",
-      bio: "AI architect behind the Oxford-Cambridge Joint AI Programme; led 100+ product launches for AstraZeneca, FIFA & PwC.",
-      imageSrc: "/lovable-uploads/84985e0c-a5f6-4092-85f9-60bc8e98f585.png"
-    },
-    {
-      name: "Moe Uwaifo",
-      role: "Chief AI Officer",
-      bio: "Serial founder (B2B, B2C, D2C) whose platforms reach millions of users and drive $-scale revenues across three continents.",
-      imageSrc: "/lovable-uploads/c4ce8432-00ee-4e1a-b526-9ed01051f32e.png"
+      role: "Chief Technology Officer",
+      bio: "AI leader for the Oxford-Cambridge Joint AI Programme; decade delivering enterprise AI solutions for AstraZeneca, FIFA, Hawk Gaming and PwC.",
+      imageSrc: "/lovable-uploads/fdeeeac9-e54b-48b6-956c-4b6eda999806.png"
     },
     {
       name: "Dr Tomasz George",
-      role: "CSO",
-      bio: "PhD Longevity scientist; ex-CSO of a NASDAQ biotech; designed global longevity-clinic protocols and wellness algorithms.",
-      imageSrc: "/lovable-uploads/95ad470d-2233-4fc9-9fed-cc2c40bd1bd5.png"
+      role: "Chief Scientific Officer",
+      bio: "PhD Longevity scientist with 15 years' healthcare-AI experience; ex-CSO of a NASDAQ biotech and architect of global longevity-clinic protocols.",
+      imageSrc: "/lovable-uploads/fdeeeac9-e54b-48b6-956c-4b6eda999806.png"
     },
     {
       name: "Ray Rafik",
-      role: "CCO",
-      bio: "Five-time founder; secured a £500m Allianz partnership at Unmortgage; growth strategist obsessed with canine wellbeing.",
-      imageSrc: "/lovable-uploads/34050ac5-2bbc-4e3e-9e6e-b2fc17cb23c4.png"
+      role: "Chief Commercial Officer",
+      bio: "Five-time founder and growth strategist; secured a £500 m Allianz partnership at Unmortgage and drives commercial expansion with a passion for pets.",
+      imageSrc: "/lovable-uploads/fdeeeac9-e54b-48b6-956c-4b6eda999806.png"
     }
   ];
 
