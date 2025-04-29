@@ -43,14 +43,14 @@ const Science = () => {
           ref={titleRef}
           className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight mb-6"
         >
-          Science-Led
+          Data Intelligence
         </h1>
         <div 
           ref={textRef}
           className="animate-on-scroll max-w-2xl mx-auto"
         >
           <p className="text-lg md:text-xl text-white leading-relaxed">
-            Our groundbreaking research combines advanced artificial intelligence with multi-omic data to create comprehensive digital canine twins. This patented technology allows us to monitor, predict, and enhance canine health with unprecedented precision, extending both quality of life and longevity.
+            Companio translates your dog's health data into a living model—an intelligent twin that sees patterns vets can't, and flags issues before symptoms show.
           </p>
         </div>
       </div>
