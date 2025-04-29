@@ -78,8 +78,8 @@ const Team = () => {
     {
       name: "Cameron Shaw",
       role: "Chief Executive Officer",
-      bio: "Multi-exit biotech founder with a NASDAQ IPO and 17 industry awards; spearheaded breakthrough veterinary diagnostics and consumer health brands.",
-      imageSrc: "/lovable-uploads/ad150a7b-3fa9-49cb-909b-b37227863539.png"
+      bio: "Multi-exit biotech founder with a NASDAQ IPO and 17 industry accolades; spearheaded breakthrough veterinary diagnostics and consumer health brands.",
+      imageSrc: "/lovable-uploads/567880e1-38e1-4371-81f4-4581b911eacb.png"
     },
     {
       name: "Moe Hanafy",
