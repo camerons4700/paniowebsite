@@ -2,9 +2,9 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Science from "@/components/Science";
+import Research from "@/components/Research";
 import Team from "@/components/Team";
-import Advisors from "@/components/Advisors";
+import DataModels from "@/components/DataModels";
 import Solution from "@/components/Solution";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -16,7 +16,7 @@ const Index = () => {
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Revolutionary AI-powered technology creating personalized health models for every canine companion.");
+      metaDescription.setAttribute("content", "The Digital Twin Keeping Dogs Healthier, for Longer.");
     }
 
     // Animation observer for scroll animations
@@ -46,9 +46,9 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
       <Hero />
-      <Science />
+      <Research />
+      <DataModels />
       <Team />
-      <Advisors />
       <Solution />
       <CTA />
       <Footer />

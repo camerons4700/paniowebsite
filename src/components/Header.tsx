@@ -34,9 +34,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/e2caf99c-2624-4ab4-ab26-e066384c08bc.png" 
+            src="/lovable-uploads/dafc7530-7ae8-4bbf-9239-3284328836fe.png" 
             alt="Companio Logo" 
-            className="h-10 md:h-12 mr-3" 
+            className="h-12 md:h-14 mr-3" 
           />
           <a 
             href="#" 
@@ -51,7 +51,7 @@ const Header = () => {
         </div>
         <nav>
           <ul className="flex space-x-6 md:space-x-10">
-            {['Science', 'Team', 'Solution', 'Contact'].map((item) => (
+            {['Research', 'Team', 'Solution', 'Contact'].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}

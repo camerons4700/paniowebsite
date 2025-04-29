@@ -54,7 +54,6 @@ const TeamMember = ({ name, role, bio, imageSrc, delay = 0 }: TeamMemberProps) =
 
 const Team = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const advisoryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,11 +68,9 @@ const Team = () => {
     );
 
     if (titleRef.current) observer.observe(titleRef.current);
-    if (advisoryRef.current) observer.observe(advisoryRef.current);
 
     return () => {
       if (titleRef.current) observer.unobserve(titleRef.current);
-      if (advisoryRef.current) observer.unobserve(advisoryRef.current);
     };
   }, []);
 
@@ -120,7 +117,7 @@ const Team = () => {
           Founding Team
         </h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
           {teamMembers.map((member, index) => (
             <TeamMember 
               key={member.name}
@@ -131,16 +128,6 @@ const Team = () => {
               delay={index * 100}
             />
           ))}
-        </div>
-
-        <div 
-          ref={advisoryRef}
-          className="animate-on-scroll text-center mt-12 max-w-3xl mx-auto"
-        >
-          <h3 className="text-2xl font-semibold mb-4">World-Class Board & Brand Ambassadors</h3>
-          <p className="text-companio-gray">
-            We're finalising a council of leading veterinarians, geneticists, athletes and canine influencers—full roster coming soon.
-          </p>
         </div>
       </div>
     </section>
