@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import DataModels from "@/components/DataModels";
 import Science from "@/components/Science";
+import AIInsights from "@/components/AIInsights";
 import Team from "@/components/Team";
 import Solution from "@/components/Solution";
 import CTA from "@/components/CTA";
@@ -48,6 +49,7 @@ const Index = () => {
       <Hero />
       <DataModels />
       <Science />
+      <AIInsights />
       <Solution />
       <Team />
       <CTA />
