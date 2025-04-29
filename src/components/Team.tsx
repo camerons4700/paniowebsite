@@ -97,7 +97,7 @@ const Team = () => {
       name: "Dr Tomasz George",
       role: "Chief Scientific Officer",
       bio: "PhD Longevity scientist with 15 years' healthcare-AI experience; ex-CSO of a NASDAQ biotech and architect of global longevity-clinic protocols.",
-      imageSrc: "/lovable-uploads/84985e0c-a5f6-4092-85f9-60bc8e98f585.png"
+      imageSrc: "/lovable-uploads/0f42c9b1-b891-435f-9c45-0bdcab10d331.png"
     },
     {
       name: "Ray Rafik",
