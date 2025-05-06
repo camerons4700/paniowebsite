@@ -27,7 +27,7 @@ const FuturePetHealth = () => {
   }, []);
 
   return (
-    <section className="relative h-screen bg-companio-charcoal overflow-hidden">
+    <section className="relative h-screen bg-panio-charcoal overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src="/lovable-uploads/a5f2c939-fe2e-496a-9a18-de55385c85ca.png"
@@ -50,7 +50,7 @@ const FuturePetHealth = () => {
           className="animate-on-scroll max-w-2xl mx-auto"
         >
           <p className="text-lg md:text-xl text-white leading-relaxed">
-            Every dog deserves more good years. Companio is pioneering the science of longevity and wellbeing — so you can spend more time with the companions who matter most.
+            Every dog deserves more good years. Panio is pioneering the science of longevity and wellbeing — so you can spend more time with the companions who matter most.
           </p>
         </div>
       </div>

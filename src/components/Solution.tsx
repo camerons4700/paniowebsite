@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 
 interface SolutionStepProps {
@@ -40,11 +41,11 @@ const SolutionStep = ({ number, title, description, delay = 0 }: SolutionStepPro
       className="animate-on-scroll flex flex-col items-center"
       data-delay={delay}
     >
-      <div className="w-12 h-12 rounded-full bg-companio-accent flex items-center justify-center text-white text-xl font-bold mb-4">
+      <div className="w-12 h-12 rounded-full bg-panio-accent flex items-center justify-center text-white text-xl font-bold mb-4">
         {number}
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-center text-companio-gray">{description}</p>
+      <p className="text-center text-panio-gray">{description}</p>
     </div>
   );
 };
@@ -80,7 +81,7 @@ const Solution = () => {
   return (
     <>
       {/* Solution Snapshot Hero Section */}
-      <section id="solution" className="relative h-screen bg-companio-charcoal overflow-hidden">
+      <section id="solution" className="relative h-screen bg-panio-charcoal overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/lovable-uploads/95ad470d-2233-4fc9-9fed-cc2c40bd1bd5.png" 
@@ -119,7 +120,7 @@ const Solution = () => {
           </h2>
           
           <div className="relative">
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-companio-offwhite -translate-y-1/2 z-0 hidden md:block"></div>
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-panio-offwhite -translate-y-1/2 z-0 hidden md:block"></div>
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-10">
               <SolutionStep 
                 number="1"

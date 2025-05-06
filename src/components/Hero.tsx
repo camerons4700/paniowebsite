@@ -23,7 +23,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen bg-companio-charcoal overflow-hidden">
+    <section className="relative h-screen bg-panio-charcoal overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src="/lovable-uploads/34050ac5-2bbc-4e3e-9e6e-b2fc17cb23c4.png"
@@ -31,7 +31,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
         />
         {/* Only keeping the essential gradient for text readability, no color overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-companio-charcoal/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-panio-charcoal/70"></div>
       </div>
       
       <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20 max-w-7xl mx-auto">

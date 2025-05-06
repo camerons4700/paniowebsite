@@ -63,7 +63,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				companio: {
+				panio: {
 					charcoal: '#221F26',
 					offwhite: '#f3f3f3',
 					accent: '#5e869f',

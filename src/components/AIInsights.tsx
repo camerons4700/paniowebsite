@@ -34,11 +34,11 @@ const InsightCard = ({ icon, title, description }: InsightCardProps) => {
       ref={cardRef} 
       className="animate-on-scroll flex flex-col items-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
     >
-      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-companio-offwhite mb-4">
-        <div className="text-companio-accent">{icon}</div>
+      <div className="w-16 h-16 flex items-center justify-center rounded-full bg-panio-offwhite mb-4">
+        <div className="text-panio-accent">{icon}</div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-companio-charcoal">{title}</h3>
-      <p className="text-center text-companio-gray">{description}</p>
+      <h3 className="text-xl font-semibold mb-2 text-panio-charcoal">{title}</h3>
+      <p className="text-center text-panio-gray">{description}</p>
     </div>
   );
 };

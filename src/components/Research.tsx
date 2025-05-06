@@ -24,7 +24,7 @@ const Research = () => {
   }, []);
 
   return (
-    <section id="research" className="relative h-screen bg-companio-charcoal overflow-hidden">
+    <section id="research" className="relative h-screen bg-panio-charcoal overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
           src="/lovable-uploads/304cae6b-58e6-4578-b568-4a36dd464683.png" 

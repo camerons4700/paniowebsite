@@ -32,7 +32,7 @@ const Advisors = () => {
   const advisors = Array(8).fill(null);
 
   return (
-    <section className="py-20 px-6 md:px-10 bg-companio-charcoal text-white">
+    <section className="py-20 px-6 md:px-10 bg-panio-charcoal text-white">
       <div className="max-w-7xl mx-auto">
         <h2 
           ref={titleRef}

@@ -27,7 +27,7 @@ const Science = () => {
   }, []);
 
   return (
-    <section id="science" className="relative h-screen bg-companio-charcoal overflow-hidden">
+    <section id="science" className="relative h-screen bg-panio-charcoal overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
           src="/lovable-uploads/304cae6b-58e6-4578-b568-4a36dd464683.png" 
@@ -50,7 +50,7 @@ const Science = () => {
           className="animate-on-scroll max-w-2xl mx-auto"
         >
           <p className="text-lg md:text-xl text-white leading-relaxed">
-            Companio translates your dog's health data into a living model—an intelligent twin that sees patterns vets can't, and flags issues before symptoms show.
+            Panio translates your dog's health data into a living model—an intelligent twin that sees patterns vets can't, and flags issues before symptoms show.
           </p>
         </div>
       </div>

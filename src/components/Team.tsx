@@ -42,12 +42,12 @@ const TeamMember = ({ name, role, bio, imageSrc, delay = 0 }: TeamMemberProps) =
       className="animate-on-scroll flex flex-col items-center"
       data-delay={delay}
     >
-      <div className="w-40 h-40 bg-companio-charcoal/10 rounded-full overflow-hidden mb-4 flex items-center justify-center">
+      <div className="w-40 h-40 bg-panio-charcoal/10 rounded-full overflow-hidden mb-4 flex items-center justify-center">
         <img src={imageSrc} alt={name} className="w-full h-full object-cover" />
       </div>
       <h3 className="text-xl font-semibold">{name}</h3>
-      <p className="text-companio-accent text-sm mb-2">{role}</p>
-      <p className="text-companio-gray text-sm text-center max-w-[200px]">{bio}</p>
+      <p className="text-panio-accent text-sm mb-2">{role}</p>
+      <p className="text-panio-gray text-sm text-center max-w-[200px]">{bio}</p>
     </div>
   );
 };

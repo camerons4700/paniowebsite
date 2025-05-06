@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -72,7 +73,7 @@ const Header = () => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-10',
-        scrolled ? 'bg-companio-charcoal/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
+        scrolled ? 'bg-panio-charcoal/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -82,7 +83,7 @@ const Header = () => {
             onClick={(e) => scrollToSection(e, 'home')}
             className="text-2xl md:text-3xl lg:text-[2.8rem] font-bold tracking-wider uppercase font-montserrat transition-colors duration-300 text-white"
           >
-            Companio
+            Panio
           </a>
         </div>
 
@@ -97,10 +98,10 @@ const Header = () => {
                     onClick={(e) => scrollToSection(e, item.id)}
                     className={cn(
                       'text-sm md:text-lg font-medium transition-colors duration-200',
-                      scrolled ? 'text-white' : 'text-companio-charcoal',
+                      scrolled ? 'text-white' : 'text-panio-charcoal',
                       activeSection === item.id 
-                        ? 'text-companio-accent' 
-                        : (scrolled ? 'hover:text-companio-accent' : 'hover:text-companio-accent')
+                        ? 'text-panio-accent' 
+                        : (scrolled ? 'hover:text-panio-accent' : 'hover:text-panio-accent')
                     )}
                   >
                     {item.label}
@@ -122,7 +123,7 @@ const Header = () => {
                 <Menu size={28} />
               </button>
             </DrawerTrigger>
-            <DrawerContent className="h-[70vh] bg-companio-charcoal/95 backdrop-blur-sm">
+            <DrawerContent className="h-[70vh] bg-panio-charcoal/95 backdrop-blur-sm">
               <div className="flex justify-end p-4">
                 <DrawerClose asChild>
                   <button 
@@ -142,8 +143,8 @@ const Header = () => {
                         onClick={(e) => scrollToSection(e, item.id)}
                         className={cn(
                           'text-xl font-medium transition-colors duration-200 block py-3',
-                          'text-white hover:text-companio-accent',
-                          activeSection === item.id && 'text-companio-accent'
+                          'text-white hover:text-panio-accent',
+                          activeSection === item.id && 'text-panio-accent'
                         )}
                       >
                         {item.label}
