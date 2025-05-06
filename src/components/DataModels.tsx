@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Database, Layers, ChartBar, Activity, Health } from 'lucide-react';
+import { Database, Layers, ChartBar, Activity, Heart } from 'lucide-react';
 
 const DataModels = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -52,7 +52,7 @@ const DataModels = () => {
                   <span className="text-sm text-center">Genetic Data</span>
                 </div>
                 <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <Health className="h-8 w-8 text-companio-accent mb-2" />
+                  <Heart className="h-8 w-8 text-companio-accent mb-2" />
                   <span className="text-sm text-center">Health Records</span>
                 </div>
                 <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
@@ -96,7 +96,7 @@ const DataModels = () => {
                   <div className="w-48 h-48 rounded-full border-2 border-dashed border-companio-accent-light animate-[spin_15s_linear_infinite] flex items-center">
                     <Layers className="absolute left-0 -ml-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
                     <Activity className="absolute right-0 -mr-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
-                    <Health className="absolute top-0 -mt-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
+                    <Heart className="absolute top-0 -mt-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
                     <Database className="absolute bottom-0 -mb-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
                   </div>
                 </div>
