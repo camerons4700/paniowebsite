@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -80,7 +81,7 @@ const Header = () => {
           <a 
             href="#home" 
             onClick={(e) => scrollToSection(e, 'home')}
-            className="text-2xl md:text-3xl lg:text-[2.8rem] font-bold tracking-wider uppercase font-montserrat transition-colors duration-300 text-white"
+            className="text-2xl md:text-3xl lg:text-[2.8rem] font-bold tracking-[0.25em] uppercase font-montserrat transition-colors duration-300 text-white"
           >
             Panio
           </a>
