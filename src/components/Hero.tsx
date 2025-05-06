@@ -27,9 +27,9 @@ const Hero = () => {
     <section className="relative h-screen bg-panio-charcoal overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/lovable-uploads/fb135989-938a-478e-8ee8-a039f1665178.png"
+          src="/lovable-uploads/4fbdc551-6191-45dd-b72f-b9a43daf2088.png"
           alt="Happy golden retriever dog with dark green background"
-          className="w-full h-full object-cover object-left-top md:object-left"
+          className="w-full h-full object-cover object-left md:object-center"
         />
         {/* Only keeping the essential gradient for text readability, no color overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-panio-charcoal/70"></div>
@@ -38,7 +38,7 @@ const Hero = () => {
       <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20 max-w-7xl mx-auto">
         <h1 
           ref={titleRef}
-          className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight ml-auto mr-0 md:ml-auto md:mr-10 text-right"
+          className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight ml-auto md:mx-auto text-center"
         >
           Your Canine Longevity Companion
         </h1>
