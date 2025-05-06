@@ -34,8 +34,6 @@ const Science = () => {
           alt="Science-led research image" 
           className="w-full h-full object-cover"
         />
-        {/* Lighten overlay - 10% lighter (white with 0.1 opacity) */}
-        <div className="absolute inset-0 bg-white opacity-10"></div>
         {/* Original semi-transparent dark overlay */}
         <div className="absolute inset-0 bg-black opacity-30"></div>
       </div>

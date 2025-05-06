@@ -31,10 +31,6 @@ const Hero = () => {
           alt="Happy golden retriever dog outdoors"
           className="w-full h-full object-cover"
         />
-        {/* Lighten overlay - 10% lighter (white with 0.1 opacity) */}
-        <div className="absolute inset-0 bg-white opacity-10"></div>
-        {/* Another lighten overlay - additional 10% lighter (white with 0.1 opacity) */}
-        <div className="absolute inset-0 bg-white opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-companio-charcoal/10 to-companio-charcoal/90"></div>
       </div>
       
