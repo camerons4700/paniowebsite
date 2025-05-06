@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -63,7 +62,7 @@ const Header = () => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'science', label: 'Data Intelligence' },
+    { id: 'science', label: 'Data' },
     { id: 'solution', label: 'Solution' },
     { id: 'team', label: 'Team' },
     { id: 'contact', label: 'Contact' }
