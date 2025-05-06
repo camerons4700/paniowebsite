@@ -45,22 +45,22 @@ const DataModels = () => {
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-10">
             {/* Left side - Data Silos */}
             <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl w-full lg:w-1/3">
-              <h3 className="text-xl font-semibold mb-4 text-companio-charcoal">Fragmented Data Silos</h3>
+              <h3 className="text-xl font-semibold mb-4 text-panio-charcoal">Fragmented Data Silos</h3>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <Database className="h-8 w-8 text-companio-accent mb-2" />
+                  <Database className="h-8 w-8 text-panio-accent mb-2" />
                   <span className="text-sm text-center">Genetic Data</span>
                 </div>
                 <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <Heart className="h-8 w-8 text-companio-accent mb-2" />
+                  <Heart className="h-8 w-8 text-panio-accent mb-2" />
                   <span className="text-sm text-center">Health Records</span>
                 </div>
                 <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <Activity className="h-8 w-8 text-companio-accent mb-2" />
+                  <Activity className="h-8 w-8 text-panio-accent mb-2" />
                   <span className="text-sm text-center">Activity Data</span>
                 </div>
                 <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <ChartBar className="h-8 w-8 text-companio-accent mb-2" />
+                  <ChartBar className="h-8 w-8 text-panio-accent mb-2" />
                   <span className="text-sm text-center">Environmental</span>
                 </div>
               </div>
@@ -82,10 +82,10 @@ const DataModels = () => {
             </div>
 
             {/* Right side - Digital Twin */}
-            <div className="flex flex-col items-center p-6 bg-companio-offwhite rounded-xl w-full lg:w-1/2">
-              <h3 className="text-xl font-semibold mb-4 text-companio-charcoal">Dynamic Digital Twin</h3>
+            <div className="flex flex-col items-center p-6 bg-panio-offwhite rounded-xl w-full lg:w-1/2">
+              <h3 className="text-xl font-semibold mb-4 text-panio-charcoal">Dynamic Digital Twin</h3>
               <div className="relative w-full h-52 mb-4 flex items-center justify-center">
-                <div className="absolute w-28 h-28 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-companio-accent z-20">
+                <div className="absolute w-28 h-28 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-panio-accent z-20">
                   <img 
                     src="/lovable-uploads/3afbcdce-7963-4cb6-903b-9f2b576f155d.png" 
                     alt="Dog silhouette"
@@ -93,11 +93,11 @@ const DataModels = () => {
                   />
                 </div>
                 <div className="absolute w-full h-full flex items-center justify-center">
-                  <div className="w-48 h-48 rounded-full border-2 border-dashed border-companio-accent-light animate-[spin_15s_linear_infinite] flex items-center">
-                    <Layers className="absolute left-0 -ml-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
-                    <Activity className="absolute right-0 -mr-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
-                    <Heart className="absolute top-0 -mt-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
-                    <Database className="absolute bottom-0 -mb-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-companio-accent" />
+                  <div className="w-48 h-48 rounded-full border-2 border-dashed border-panio-accent-light animate-[spin_15s_linear_infinite] flex items-center">
+                    <Layers className="absolute left-0 -ml-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    <Activity className="absolute right-0 -mr-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    <Heart className="absolute top-0 -mt-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    <Database className="absolute bottom-0 -mb-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
                   </div>
                 </div>
               </div>
@@ -124,7 +124,7 @@ const DataModels = () => {
           
           {/* Summary text */}
           <p className="text-md text-center text-gray-700 max-w-3xl mx-auto">
-            Companio transforms fragmented pet health data into a comprehensive digital twin, 
+            Panio transforms fragmented pet health data into a comprehensive digital twin, 
             enabling early detection of health issues and personalized care recommendations.
           </p>
         </div>

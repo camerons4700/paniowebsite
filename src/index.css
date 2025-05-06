@@ -56,7 +56,7 @@
   }
 
   body {
-    @apply bg-white text-companio-charcoal font-sans;
+    @apply bg-white text-panio-charcoal font-sans;
   }
 
   .animate-on-scroll {
