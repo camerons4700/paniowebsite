@@ -39,7 +39,7 @@ const Hero = () => {
           ref={titleRef}
           className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight"
         >
-          The Digital Twin Keeping Dogs Healthier, for Longer.
+          Your Canine Longevity Companion
         </h1>
       </div>
       
