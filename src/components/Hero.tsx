@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 const Hero = () => {
@@ -31,7 +30,8 @@ const Hero = () => {
           alt="Happy golden retriever dog outdoors"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-companio-charcoal/10 to-companio-charcoal/90"></div>
+        {/* Only keeping the essential gradient for text readability, no color overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-companio-charcoal/70"></div>
       </div>
       
       <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20 max-w-7xl mx-auto">

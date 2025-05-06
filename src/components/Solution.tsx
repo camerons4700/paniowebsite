@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 interface SolutionStepProps {
@@ -88,6 +87,7 @@ const Solution = () => {
             alt="Dog in natural setting" 
             className="w-full h-full object-cover"
           />
+          {/* Removed all overlays for clean image display */}
         </div>
         
         <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 md:px-20 max-w-7xl mx-auto text-center">

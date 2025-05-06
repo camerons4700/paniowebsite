@@ -31,7 +31,7 @@ const Research = () => {
           alt="Science-led research image" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-companio-charcoal/70 to-companio-charcoal/70"></div>
+        {/* Removed all overlays for clean image display */}
       </div>
       
       <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 md:px-20">
