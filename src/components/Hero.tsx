@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 
 const Hero = () => {
@@ -26,8 +27,8 @@ const Hero = () => {
     <section className="relative h-screen bg-panio-charcoal overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/lovable-uploads/34050ac5-2bbc-4e3e-9e6e-b2fc17cb23c4.png"
-          alt="Happy golden retriever dog outdoors"
+          src="/lovable-uploads/fb135989-938a-478e-8ee8-a039f1665178.png"
+          alt="Happy golden retriever dog with dark green background"
           className="w-full h-full object-cover"
         />
         {/* Only keeping the essential gradient for text readability, no color overlays */}
