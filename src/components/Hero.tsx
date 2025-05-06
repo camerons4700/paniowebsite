@@ -38,7 +38,7 @@ const Hero = () => {
       <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20 max-w-7xl mx-auto">
         <h1 
           ref={titleRef}
-          className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight ml-auto md:mx-auto text-center"
+          className="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight ml-auto mr-4 md:mr-0 md:ml-auto text-right"
         >
           Your Canine Longevity Companion
         </h1>
