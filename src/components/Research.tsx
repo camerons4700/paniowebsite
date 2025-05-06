@@ -31,7 +31,8 @@ const Research = () => {
           alt="Science-led research image" 
           className="w-full h-full object-cover"
         />
-        {/* Removed all overlays for clean image display */}
+        {/* Add 10% darker overlay */}
+        <div className="absolute inset-0 bg-black opacity-10"></div>
       </div>
       
       <div className="relative z-10 flex flex-col justify-center items-center h-full px-6 md:px-20">
