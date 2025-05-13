@@ -1,10 +1,11 @@
 
 import { useEffect, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import { Database, Layers, ChartBar, Activity, Heart } from 'lucide-react';
 
 const DataModels = () => {
-  const elementsRef = useRef<Array<HTMLElement | null>>([]);
-  
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,176 +18,139 @@ const DataModels = () => {
       { threshold: 0.1 }
     );
 
-    elementsRef.current.forEach(el => {
-      if (el) observer.observe(el);
-    });
+    if (titleRef.current) observer.observe(titleRef.current);
+    if (contentRef.current) observer.observe(contentRef.current);
 
     return () => {
-      elementsRef.current.forEach(el => {
-        if (el) observer.unobserve(el);
-      });
+      if (titleRef.current) observer.unobserve(titleRef.current);
+      if (contentRef.current) observer.unobserve(contentRef.current);
     };
   }, []);
 
-  const dataPoints = [
-    { 
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-          <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
-        </svg>
-      ), 
-      title: "Heart Rate", 
-      value: "120 bpm",
-      color: "bg-red-500"
-    },
-    { 
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-          <path d="M19 3v12h-5c-.023-3.681.184-7.406 5-12zm0 12v6-6zm-8 6h14-14zm0 0v-4-2V3v12zm0 0H5c-1.042-.001-2.039-.99-2.039-1.989 0-.802 2.662-1.99 2.662-1.99.088 1.184.8 1.498 1.739 1.498H11V3c-4.183 1.799-7.136 5.324-7.848 9.580A3.351 3.351 0 0 0 2 15.01C2 16.663 3.34 18 5 18h6z"></path>
-        </svg>
-      ), 
-      title: "Respiration", 
-      value: "24 rpm",
-      color: "bg-blue-500"
-    },
-    { 
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-        </svg>
-      ), 
-      title: "Activity", 
-      value: "15 min",
-      color: "bg-green-500"
-    },
-    { 
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-          <path d="M3 2v7M3 5h12M3 9l9 9M15 12h5a2 2 0 0 1 2 2v7"></path>
-        </svg>
-      ), 
-      title: "Sleep", 
-      value: "8.2 hrs",
-      color: "bg-purple-500"
-    }
-  ];
-
   return (
-    <section id="research" className="py-20 md:py-32 bg-gradient-to-b from-panio-charcoal to-panio-navy relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="text-center mb-16">
-          <h2 
-            ref={el => elementsRef.current[0] = el} 
-            className="animate-on-scroll text-4xl md:text-5xl font-bold text-white mb-6"
-          >
-            Comprehensive Data Collection
-          </h2>
-          <p 
-            ref={el => elementsRef.current[1] = el} 
-            className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto"
-          >
-            Our platform continuously monitors and analyzes your dog's vital signs, activity patterns, and behavioral changes to build a comprehensive digital twin.
-          </p>
-        </div>
-      
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Visualization Side */}
-          <div 
-            ref={el => elementsRef.current[2] = el} 
-            className="animate-on-scroll relative flex justify-center"
-          >
-            <div className="relative w-72 h-72 rounded-full border-4 border-panio-accent flex items-center justify-center">
-              <div className="absolute w-full h-full rounded-full border-2 border-gray-600/30 animate-ping-slow"></div>
-              
-              {/* Data connection lines */}
-              <div className="absolute w-full h-full">
-                {dataPoints.map((_, index) => {
-                  const angle = (index * (360 / dataPoints.length) - 45) * (Math.PI / 180);
-                  const x1 = Math.cos(angle) * 75;
-                  const y1 = Math.sin(angle) * 75;
-                  const x2 = Math.cos(angle) * 160;
-                  const y2 = Math.sin(angle) * 160;
-                  
-                  return (
-                    <svg key={index} className="absolute inset-0 w-full h-full" style={{overflow: 'visible'}}>
-                      <line 
-                        x1={144 + x1} 
-                        y1={144 + y1} 
-                        x2={144 + x2} 
-                        y2={144 + y2} 
-                        stroke="rgba(148, 163, 184, 0.15)" 
-                        strokeWidth="2"
-                        strokeDasharray="2,4" 
-                      />
-                    </svg>
-                  );
-                })}
+    <section className="py-20 px-6 md:px-10 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <h2 
+          ref={titleRef}
+          className="animate-on-scroll text-3xl md:text-4xl font-bold text-center mb-12"
+        >
+          From Data Silos to Dynamic Health Models
+        </h2>
+        
+        <div 
+          ref={contentRef}
+          className="animate-on-scroll max-w-5xl mx-auto"
+        >
+          {/* Visual diagram */}
+          <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 mb-10">
+            {/* Left side - Data Silos */}
+            <div className="flex flex-col items-center p-8 bg-gray-50 rounded-xl w-full lg:w-1/2 shadow-sm">
+              <h3 className="text-xl font-semibold mb-6 text-panio-charcoal">Fragmented Data Silos</h3>
+              <div className="grid grid-cols-2 gap-6 mb-8 w-full">
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm h-36">
+                  <Database className="h-10 w-10 text-panio-accent mb-4" />
+                  <span className="text-base text-center">Genetic Data</span>
+                </div>
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm h-36">
+                  <Heart className="h-10 w-10 text-panio-accent mb-4" />
+                  <span className="text-base text-center">Health Records</span>
+                </div>
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm h-36">
+                  <Activity className="h-10 w-10 text-panio-accent mb-4" />
+                  <span className="text-base text-center">Activity Data</span>
+                </div>
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm h-36">
+                  <ChartBar className="h-10 w-10 text-panio-accent mb-4" />
+                  <span className="text-base text-center">Environmental</span>
+                </div>
               </div>
               
-              {/* Center dog image */}
-              <div className="absolute w-32 h-32 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-panio-accent z-20 overflow-hidden">
-                <img 
-                  src="/lovable-uploads/b9d549cd-a13b-49e2-b063-0a9f45244009.png" 
-                  alt="Golden retriever dog with head visible"
-                  className="w-48 h-48 object-cover object-center transform translate-y-6" 
-                />
+              {/* Spacer with dashed line */}
+              <div className="flex-grow min-h-[60px] flex items-center justify-center">
+                <div className="border-b border-dashed border-gray-300 w-3/4"></div>
               </div>
               
-              {/* Data Points around the circle */}
-              {dataPoints.map((point, index) => {
-                const angle = (index * (360 / dataPoints.length) - 45) * (Math.PI / 180);
-                const x = Math.cos(angle) * 160;
-                const y = Math.sin(angle) * 160;
+              <p className="text-sm text-center text-gray-600 mt-auto">Isolated, disconnected data points</p>
+            </div>
+
+            {/* Arrow */}
+            <div className="flex justify-center items-center py-2 lg:py-0">
+              <div className="hidden lg:block">
+                <svg width="80" height="24" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M79.0607 13.0607C79.6464 12.4749 79.6464 11.5251 79.0607 10.9393L69.5147 1.3934C68.9289 0.807611 67.9792 0.807611 67.3934 1.3934C66.8076 1.97919 66.8076 2.92893 67.3934 3.51472L75.8787 12L67.3934 20.4853C66.8076 21.0711 66.8076 22.0208 67.3934 22.6066C67.9792 23.1924 68.9289 23.1924 69.5147 22.6066L79.0607 13.0607ZM0 13.5H78V10.5H0V13.5Z" fill="#5e869f"/>
+                </svg>
+              </div>
+              <div className="block lg:hidden">
+                <svg width="24" height="40" viewBox="0 0 24 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.9393 59.0607C11.5251 59.6464 12.4749 59.6464 13.0607 59.0607L22.6066 49.5147C23.1924 48.9289 23.1924 47.9792 22.6066 47.3934C22.0208 46.8076 21.0711 46.8076 20.4853 47.3934L12 55.8787L3.51472 47.3934C2.92893 46.8076 1.97919 46.8076 1.3934 47.3934C0.807611 47.9792 0.807611 48.9289 1.3934 49.5147L10.9393 59.0607ZM10.5 0V58H13.5V0H10.5Z" fill="#5e869f"/>
+                </svg>
+              </div>
+            </div>
+
+            {/* Right side - Digital Twin */}
+            <div className="flex flex-col items-center p-8 bg-panio-offwhite rounded-xl w-full lg:w-1/2 shadow-sm">
+              <h3 className="text-xl font-semibold mb-6 text-panio-charcoal">Dynamic Digital Twin</h3>
+              <div className="relative w-full h-60 mb-6 flex items-center justify-center">
+                {/* Center dog image with zoomed in face */}
+                <div className="absolute w-32 h-32 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-panio-accent z-20 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/c3e3523d-a394-4c33-b8a9-66a92ec1c5fb.png" 
+                    alt="Happy golden retriever dog"
+                    className="w-60 h-60 object-cover object-center transform scale-[1.6] -translate-y-8" 
+                  />
+                </div>
                 
-                return (
-                  <div 
-                    key={index}
-                    className="absolute flex flex-col items-center"
-                    style={{
-                      transform: `translate(${x}px, ${y}px)`,
-                    }}
-                  >
-                    <div className={cn("w-10 h-10 rounded-full flex items-center justify-center text-white", point.color)}>
-                      {point.icon}
+                {/* Orbit circle with evenly spaced icons */}
+                <div className="absolute w-full h-full flex items-center justify-center">
+                  <div className="w-56 h-56 rounded-full border-2 border-dashed border-panio-accent-light animate-[spin_15s_linear_infinite] relative">
+                    {/* Top icon */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                      <Heart className="bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
                     </div>
-                    <div className="mt-1 text-center">
-                      <p className="text-white font-medium">{point.title}</p>
-                      <p className="text-gray-300 text-sm">{point.value}</p>
+                    
+                    {/* Right icon */}
+                    <div className="absolute top-1/2 right-0 translate-y-[-50%] translate-x-[50%]">
+                      <Activity className="bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    </div>
+                    
+                    {/* Bottom icon */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                      <Database className="bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    </div>
+                    
+                    {/* Left icon */}
+                    <div className="absolute top-1/2 left-0 translate-y-[-50%] -translate-x-[50%]">
+                      <Layers className="bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4 w-full">
+                <div className="flex items-center bg-white p-3 rounded-lg shadow-sm">
+                  <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                  <span className="text-sm">Predict Health Issues</span>
+                </div>
+                <div className="flex items-center bg-white p-3 rounded-lg shadow-sm">
+                  <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+                  <span className="text-sm">Monitor Changes</span>
+                </div>
+                <div className="flex items-center bg-white p-3 rounded-lg shadow-sm">
+                  <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+                  <span className="text-sm">Personalized Care</span>
+                </div>
+                <div className="flex items-center bg-white p-3 rounded-lg shadow-sm">
+                  <div className="w-2 h-2 rounded-full bg-amber-500 mr-2"></div>
+                  <span className="text-sm">Enhance Longevity</span>
+                </div>
+              </div>
             </div>
           </div>
           
-          {/* Text Content Side */}
-          <div>
-            <div 
-              ref={el => elementsRef.current[3] = el} 
-              className="animate-on-scroll space-y-6"
-            >
-              <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10">
-                <h3 className="text-2xl font-bold text-white mb-3">Advanced Biometrics</h3>
-                <p className="text-gray-300">
-                  Our platform captures over 20 vital health metrics in real-time, providing unprecedented insight into your dog's wellbeing.
-                </p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10">
-                <h3 className="text-2xl font-bold text-white mb-3">Behavioral Analysis</h3>
-                <p className="text-gray-300">
-                  Beyond physical metrics, we track behavioral patterns to detect subtle changes that might indicate health concerns before they become serious.
-                </p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10">
-                <h3 className="text-2xl font-bold text-white mb-3">Personalized Insights</h3>
-                <p className="text-gray-300">
-                  Every dog is unique. Our AI creates a personalized baseline for your dog, enabling truly individualized health monitoring.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* Summary text */}
+          <p className="text-md text-center text-gray-700 max-w-3xl mx-auto">
+            Panio transforms fragmented pet health data into a comprehensive digital twin, 
+            enabling early detection of health issues and personalized care recommendations.
+          </p>
         </div>
       </div>
     </section>
