@@ -43,8 +43,8 @@ const DataModels = () => {
         >
           {/* Visual diagram */}
           <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 mb-10">
-            {/* Left side - Data Silos - Adjusted to have equal height/width with right side */}
-            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl w-full lg:w-1/2 h-full">
+            {/* Left side - Data Silos - Explicitly sized to match right side */}
+            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl w-full lg:w-1/2 shadow-sm">
               <h3 className="text-xl font-semibold mb-4 text-panio-charcoal">Fragmented Data Silos</h3>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
@@ -64,8 +64,12 @@ const DataModels = () => {
                   <span className="text-sm text-center">Environmental</span>
                 </div>
               </div>
-              {/* Added extra spacer div to help match height */}
-              <div className="flex-grow"></div>
+              
+              {/* Added spacer with minimum height to match right side height */}
+              <div className="flex-grow min-h-[80px] flex items-center justify-center">
+                <div className="border-b border-dashed border-gray-300 w-3/4"></div>
+              </div>
+              
               <p className="text-sm text-center text-gray-600 mt-auto">Isolated, disconnected data points</p>
             </div>
 
@@ -83,8 +87,8 @@ const DataModels = () => {
               </div>
             </div>
 
-            {/* Right side - Digital Twin */}
-            <div className="flex flex-col items-center p-6 bg-panio-offwhite rounded-xl w-full lg:w-1/2">
+            {/* Right side - Digital Twin - Explicitly sized */}
+            <div className="flex flex-col items-center p-6 bg-panio-offwhite rounded-xl w-full lg:w-1/2 shadow-sm">
               <h3 className="text-xl font-semibold mb-4 text-panio-charcoal">Dynamic Digital Twin</h3>
               <div className="relative w-full h-52 mb-4 flex items-center justify-center">
                 <div className="absolute w-28 h-28 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-panio-accent z-20">
