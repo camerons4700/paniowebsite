@@ -47,19 +47,19 @@ const DataModels = () => {
             <div className="flex flex-col items-center p-8 bg-gray-50 rounded-xl w-full lg:w-1/2 shadow-sm">
               <h3 className="text-xl font-semibold mb-6 text-panio-charcoal">Fragmented Data Silos</h3>
               <div className="grid grid-cols-2 gap-6 mb-8 w-full">
-                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm h-36">
                   <Database className="h-10 w-10 text-panio-accent mb-4" />
                   <span className="text-base text-center">Genetic Data</span>
                 </div>
-                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm h-36">
                   <Heart className="h-10 w-10 text-panio-accent mb-4" />
                   <span className="text-base text-center">Health Records</span>
                 </div>
-                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm h-36">
                   <Activity className="h-10 w-10 text-panio-accent mb-4" />
                   <span className="text-base text-center">Activity Data</span>
                 </div>
-                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm h-36">
                   <ChartBar className="h-10 w-10 text-panio-accent mb-4" />
                   <span className="text-base text-center">Environmental</span>
                 </div>
@@ -94,9 +94,9 @@ const DataModels = () => {
                 {/* Center dog image with zoomed in face */}
                 <div className="absolute w-32 h-32 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-panio-accent z-20 overflow-hidden">
                   <img 
-                    src="/lovable-uploads/3afbcdce-7963-4cb6-903b-9f2b576f155d.png" 
-                    alt="Dog silhouette"
-                    className="w-48 h-48 object-cover object-center" 
+                    src="/lovable-uploads/b9d549cd-a13b-49e2-b063-0a9f45244009.png" 
+                    alt="Golden retriever dog with head visible"
+                    className="w-48 h-48 object-cover object-center transform translate-y-2" 
                   />
                 </div>
                 
