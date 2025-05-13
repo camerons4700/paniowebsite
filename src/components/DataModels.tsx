@@ -94,9 +94,9 @@ const DataModels = () => {
                 {/* Center dog image with zoomed in face */}
                 <div className="absolute w-32 h-32 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-panio-accent z-20 overflow-hidden">
                   <img 
-                    src="/lovable-uploads/b9d549cd-a13b-49e2-b063-0a9f45244009.png" 
-                    alt="Golden retriever dog with head visible"
-                    className="w-48 h-48 object-cover object-center transform translate-y-6" 
+                    src="/lovable-uploads/c3e3523d-a394-4c33-b8a9-66a92ec1c5fb.png" 
+                    alt="Happy golden retriever dog"
+                    className="w-60 h-60 object-cover object-center transform scale-[1.6] -translate-y-8" 
                   />
                 </div>
                 

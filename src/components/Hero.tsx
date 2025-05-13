@@ -27,9 +27,9 @@ const Hero = () => {
     <section className="relative h-screen bg-panio-charcoal overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/lovable-uploads/4fbdc551-6191-45dd-b72f-b9a43daf2088.png"
-          alt="Happy golden retriever dog with dark green background"
-          className="w-full h-full object-cover object-left md:object-center"
+          src="/lovable-uploads/c3e3523d-a394-4c33-b8a9-66a92ec1c5fb.png"
+          alt="Happy golden retriever dog in nature setting"
+          className="w-full h-full object-cover object-center"
         />
         {/* Only keeping the essential gradient for text readability, no color overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-panio-charcoal/70"></div>
