@@ -41,10 +41,10 @@ const SolutionStep = ({ number, title, description, delay = 0 }: SolutionStepPro
       className="animate-on-scroll flex flex-col items-center"
       data-delay={delay}
     >
-      <div className="w-12 h-12 rounded-full bg-panio-accent flex items-center justify-center text-white text-xl font-bold mb-4">
+      <div className="w-16 h-16 rounded-full bg-panio-accent flex items-center justify-center text-white text-2xl font-bold mb-4">
         {number}
       </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-center text-panio-gray">{description}</p>
     </div>
   );

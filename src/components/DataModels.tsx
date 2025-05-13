@@ -43,30 +43,30 @@ const DataModels = () => {
         >
           {/* Visual diagram */}
           <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 mb-10">
-            {/* Left side - Data Silos - Explicitly sized to match right side */}
-            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl w-full lg:w-1/2 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-panio-charcoal">Fragmented Data Silos</h3>
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <Database className="h-8 w-8 text-panio-accent mb-2" />
-                  <span className="text-sm text-center">Genetic Data</span>
+            {/* Left side - Data Silos */}
+            <div className="flex flex-col items-center p-8 bg-gray-50 rounded-xl w-full lg:w-1/2 shadow-sm">
+              <h3 className="text-xl font-semibold mb-6 text-panio-charcoal">Fragmented Data Silos</h3>
+              <div className="grid grid-cols-2 gap-6 mb-8 w-full">
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
+                  <Database className="h-10 w-10 text-panio-accent mb-4" />
+                  <span className="text-base text-center">Genetic Data</span>
                 </div>
-                <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <Heart className="h-8 w-8 text-panio-accent mb-2" />
-                  <span className="text-sm text-center">Health Records</span>
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
+                  <Heart className="h-10 w-10 text-panio-accent mb-4" />
+                  <span className="text-base text-center">Health Records</span>
                 </div>
-                <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <Activity className="h-8 w-8 text-panio-accent mb-2" />
-                  <span className="text-sm text-center">Activity Data</span>
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
+                  <Activity className="h-10 w-10 text-panio-accent mb-4" />
+                  <span className="text-base text-center">Activity Data</span>
                 </div>
-                <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
-                  <ChartBar className="h-8 w-8 text-panio-accent mb-2" />
-                  <span className="text-sm text-center">Environmental</span>
+                <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm">
+                  <ChartBar className="h-10 w-10 text-panio-accent mb-4" />
+                  <span className="text-base text-center">Environmental</span>
                 </div>
               </div>
               
-              {/* Added spacer with minimum height to match right side height */}
-              <div className="flex-grow min-h-[80px] flex items-center justify-center">
+              {/* Spacer with dashed line */}
+              <div className="flex-grow min-h-[60px] flex items-center justify-center">
                 <div className="border-b border-dashed border-gray-300 w-3/4"></div>
               </div>
               
@@ -87,40 +87,58 @@ const DataModels = () => {
               </div>
             </div>
 
-            {/* Right side - Digital Twin - Explicitly sized */}
-            <div className="flex flex-col items-center p-6 bg-panio-offwhite rounded-xl w-full lg:w-1/2 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-panio-charcoal">Dynamic Digital Twin</h3>
-              <div className="relative w-full h-52 mb-4 flex items-center justify-center">
-                <div className="absolute w-28 h-28 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-panio-accent z-20">
+            {/* Right side - Digital Twin */}
+            <div className="flex flex-col items-center p-8 bg-panio-offwhite rounded-xl w-full lg:w-1/2 shadow-sm">
+              <h3 className="text-xl font-semibold mb-6 text-panio-charcoal">Dynamic Digital Twin</h3>
+              <div className="relative w-full h-60 mb-6 flex items-center justify-center">
+                {/* Center dog image with zoomed in face */}
+                <div className="absolute w-32 h-32 rounded-full bg-white shadow-md flex items-center justify-center border-2 border-panio-accent z-20 overflow-hidden">
                   <img 
                     src="/lovable-uploads/3afbcdce-7963-4cb6-903b-9f2b576f155d.png" 
                     alt="Dog silhouette"
-                    className="w-16 h-16 object-contain" 
+                    className="w-48 h-48 object-cover object-center" 
                   />
                 </div>
+                
+                {/* Orbit circle with evenly spaced icons */}
                 <div className="absolute w-full h-full flex items-center justify-center">
-                  <div className="w-48 h-48 rounded-full border-2 border-dashed border-panio-accent-light animate-[spin_15s_linear_infinite] flex items-center">
-                    <Layers className="absolute left-0 -ml-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
-                    <Activity className="absolute right-0 -mr-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
-                    <Heart className="absolute top-0 -mt-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
-                    <Database className="absolute bottom-0 -mb-4 bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                  <div className="w-56 h-56 rounded-full border-2 border-dashed border-panio-accent-light animate-[spin_15s_linear_infinite] relative">
+                    {/* Top icon */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                      <Heart className="bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    </div>
+                    
+                    {/* Right icon */}
+                    <div className="absolute top-1/2 right-0 translate-y-[-50%] translate-x-[50%]">
+                      <Activity className="bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    </div>
+                    
+                    {/* Bottom icon */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                      <Database className="bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    </div>
+                    
+                    {/* Left icon */}
+                    <div className="absolute top-1/2 left-0 translate-y-[-50%] -translate-x-[50%]">
+                      <Layers className="bg-white rounded-full p-1 shadow-sm h-8 w-8 text-panio-accent" />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center bg-white p-2 rounded-lg shadow-sm">
+              <div className="grid grid-cols-2 gap-4 w-full">
+                <div className="flex items-center bg-white p-3 rounded-lg shadow-sm">
                   <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
                   <span className="text-sm">Predict Health Issues</span>
                 </div>
-                <div className="flex items-center bg-white p-2 rounded-lg shadow-sm">
+                <div className="flex items-center bg-white p-3 rounded-lg shadow-sm">
                   <div className="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
                   <span className="text-sm">Monitor Changes</span>
                 </div>
-                <div className="flex items-center bg-white p-2 rounded-lg shadow-sm">
+                <div className="flex items-center bg-white p-3 rounded-lg shadow-sm">
                   <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
                   <span className="text-sm">Personalized Care</span>
                 </div>
-                <div className="flex items-center bg-white p-2 rounded-lg shadow-sm">
+                <div className="flex items-center bg-white p-3 rounded-lg shadow-sm">
                   <div className="w-2 h-2 rounded-full bg-amber-500 mr-2"></div>
                   <span className="text-sm">Enhance Longevity</span>
                 </div>
