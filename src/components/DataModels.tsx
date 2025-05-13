@@ -42,11 +42,11 @@ const DataModels = () => {
           className="animate-on-scroll max-w-5xl mx-auto"
         >
           {/* Visual diagram */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-10">
-            {/* Left side - Data Silos */}
-            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl w-full lg:w-1/3">
+          <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 mb-10">
+            {/* Left side - Data Silos - Adjusted to have equal height/width with right side */}
+            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl w-full lg:w-1/2 h-full">
               <h3 className="text-xl font-semibold mb-4 text-panio-charcoal">Fragmented Data Silos</h3>
-              <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
                   <Database className="h-8 w-8 text-panio-accent mb-2" />
                   <span className="text-sm text-center">Genetic Data</span>
@@ -64,7 +64,9 @@ const DataModels = () => {
                   <span className="text-sm text-center">Environmental</span>
                 </div>
               </div>
-              <p className="text-sm text-center text-gray-600">Isolated, disconnected data points</p>
+              {/* Added extra spacer div to help match height */}
+              <div className="flex-grow"></div>
+              <p className="text-sm text-center text-gray-600 mt-auto">Isolated, disconnected data points</p>
             </div>
 
             {/* Arrow */}
