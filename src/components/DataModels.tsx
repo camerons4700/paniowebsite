@@ -96,7 +96,7 @@ const DataModels = () => {
                   <img 
                     src="/lovable-uploads/b9d549cd-a13b-49e2-b063-0a9f45244009.png" 
                     alt="Golden retriever dog with head visible"
-                    className="w-48 h-48 object-cover object-center transform translate-y-2" 
+                    className="w-48 h-48 object-cover object-center transform translate-y-6" 
                   />
                 </div>
                 
