@@ -98,10 +98,8 @@ const Header = () => {
                     onClick={(e) => scrollToSection(e, item.id)}
                     className={cn(
                       'text-sm md:text-lg font-medium transition-colors duration-200',
-                      scrolled ? 'text-white' : 'text-panio-charcoal',
-                      activeSection === item.id 
-                        ? 'text-panio-accent' 
-                        : (scrolled ? 'hover:text-panio-accent' : 'hover:text-panio-accent')
+                      'text-white hover:text-panio-accent',
+                      activeSection === item.id && 'text-panio-accent'
                     )}
                   >
                     {item.label}
