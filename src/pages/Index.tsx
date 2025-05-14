@@ -14,7 +14,7 @@ import FuturePetHealth from "@/components/FuturePetHealth";
 const Index = () => {
   useEffect(() => {
     // Set page title and meta description
-    document.title = "Companio - Canine Digital Twin Technology";
+    document.title = "Panio - Canine Digital Twin Technology";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
