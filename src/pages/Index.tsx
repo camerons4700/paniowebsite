@@ -21,6 +21,12 @@ const Index = () => {
       metaDescription.setAttribute("content", "The Digital Twin Keeping Dogs Healthier, for Longer.");
     }
 
+    // Update canonical URL to ensure it points to the correct domain
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", "https://panio.io/");
+    }
+
     // Animation observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
