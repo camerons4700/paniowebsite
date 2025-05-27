@@ -144,7 +144,7 @@ const Solution = () => {
               <SolutionStep 
                 number="4"
                 title="Targeted Interventions"
-                description="Clinically-validated therapeutics and longevity treatments deployed at the perfect moment to extend healthy years."
+                description="High-impact treatments and longevity tools, delivered at the right moment to extend healthy years."
                 delay={600}
               />
             </div>
