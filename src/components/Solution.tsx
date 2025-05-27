@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 interface SolutionStepProps {
@@ -117,7 +116,7 @@ const Solution = () => {
             ref={titleRef}
             className="animate-on-scroll text-3xl md:text-4xl font-bold mb-16 text-center"
           >
-            Our 4-Part Precision Approach
+            From Insight to Intervention
           </h2>
           
           <div className="relative">
