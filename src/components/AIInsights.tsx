@@ -110,7 +110,7 @@ const AIInsights = () => {
               </svg>
             }
             title="Predictive Algorithms"
-            description="Advanced predictive capabilities that identify potential health issues before clinical symptoms appear."
+            description="Advanced analytics highlight potential risk patterns in your dog's health data — supporting earlier lifestyle and care decisions."
           />
         </div>
       </div>
